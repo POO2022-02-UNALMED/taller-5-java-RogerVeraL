@@ -12,12 +12,11 @@ import java.util.ArrayList;
 
 public class Ave extends Animal{
     private static ArrayList<Ave> listado = new ArrayList<Ave>();
-    public int halcones;
-    public int aguilas;
+    public static int halcones,aguilas;
     private String colorPlumas;
     
     //constructor 
-    public Ave(String colorPlumas, String nombre, int edad, String habitat, String genero) {
+    public Ave(String nombre, int edad, String habitat, String genero,String colorPlumas) {
         super(nombre, edad, habitat, genero);
         this.colorPlumas = colorPlumas;
         listado.add(this);
@@ -49,14 +48,14 @@ public class Ave extends Animal{
     public String movimiento(){
         return "volar";
     }
-    public Ave crearHalcon(String nombre, int edad, String genero){
+    public static Ave crearHalcon(String nombre, int edad, String genero){
         halcones++;
-        return new Ave("cafe glorioso",nombre,edad,"montanas",genero);   
+        return new Ave(nombre,edad,"montanas",genero,"cafe glorioso");   
     }
     
-    public Ave crearAguila(String nombre, int edad, String genero){
+    public static Ave crearAguila(String nombre, int edad, String genero){
         aguilas++;
-        return new Ave("blanco y amarillo",nombre,edad,"montanas",genero);   
+        return new Ave(nombre,edad,"montanas",genero,"blanco y amarillo");   
     
     }
 }

@@ -12,14 +12,13 @@ import java.util.ArrayList;
 
 public class Mamifero extends Animal{
     private static ArrayList<Mamifero> listado = new ArrayList<Mamifero>();
-    public int caballos;
-    public int leones;
+    public static int caballos,leones;
     private boolean pelaje;
     private int patas;
     
     //constructor
 
-    public Mamifero(boolean pelaje, int patas,String nombre, int edad, String habitat, String genero ) {
+    public Mamifero(String nombre, int edad, String habitat, String genero,boolean pelaje, int patas ) {
         super(nombre, edad, habitat, genero);
         this.pelaje = pelaje;
         this.patas = patas;
@@ -57,13 +56,13 @@ public class Mamifero extends Animal{
     public static int cantidadMamiferos() {
         return listado.size();
     }
-    public  Mamifero crearCaballo(String nombre, int edad, String genero){
+    public static Mamifero crearCaballo(String nombre, int edad, String genero){
         caballos++;
-        return new Mamifero(true,4,nombre,edad,"pradera",genero);
+        return new Mamifero(nombre,edad,"pradera",genero,true,4);
     }
     
-    public  Mamifero crearLeon(String nombre, int edad, String genero){
+    public static Mamifero crearLeon(String nombre, int edad, String genero){
         leones++;
-        return new Mamifero(true,4,nombre,edad,"selva",genero);
+        return new Mamifero(nombre,edad,"selva",genero,true,4);
     }
 }

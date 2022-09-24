@@ -12,13 +12,12 @@ import java.util.ArrayList;
 
 public class Reptil extends Animal{
     private static ArrayList<Reptil> listado = new ArrayList<Reptil>();
-    public int iguanas;
-    public int serpientes;
+    public static int iguanas,serpientes;
     private String colorEscamas;
     private int largoCola;
     
     //constructor 
-    public Reptil(String colorEscamas, int largoCola, String nombre, int edad, String habitat, String genero){    
+    public Reptil(String nombre, int edad, String habitat, String genero,String colorEscamas, int largoCola){    
         super(nombre, edad, habitat, genero);
         this.colorEscamas = colorEscamas;
         this.largoCola = largoCola;
@@ -62,14 +61,14 @@ public class Reptil extends Animal{
         return "reptar";
     }
     
-    public Reptil crearRIguana(String nombre, int edad, String genero){
+    public static Reptil crearRIguana(String nombre, int edad, String genero){
         iguanas++;
-        return new Reptil("verde",3,nombre,edad,"humedal",genero);
+        return new Reptil(nombre,edad,"humedal",genero,"verde",3);
     }
     
-    public Reptil crearSerpiente(String nombre, int edad, String genero){
+    public static Reptil crearSerpiente(String nombre, int edad, String genero){
         serpientes++;
-        return new Reptil("blanco",1,nombre,edad,"jungla",genero);
+        return new Reptil(nombre,edad,"jungla",genero,"blanco",1);
     
     }
 }
